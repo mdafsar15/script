@@ -10,7 +10,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh './demo.sh'
+                sh 'sudo chmod 775 ./demo.sh'
             }
         }
     }
