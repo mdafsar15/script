@@ -8,7 +8,7 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mdafsar15/script.git']]])
             }
         }
-        stage('Hello') {
+        stage('build') {
             steps {
                 sh 'demo.sh'
             }
