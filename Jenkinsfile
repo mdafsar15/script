@@ -2,9 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+
+	stage('checkout') {
             steps {
-                sh 'https://github.com/mdafsar15/script/blob/master/demo.sh'
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mdafsar15/script.git']]])
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'demo.sh'
             }
         }
     }
