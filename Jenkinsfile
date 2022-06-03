@@ -13,5 +13,11 @@ pipeline {
                 sh 'chmod 775 ./demo.sh'
             }
         }
+
+	stage('Run') {
+            steps {
+                sh './demo.sh'
+            }
+        }
     }
 }
